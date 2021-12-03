@@ -8,7 +8,7 @@ cin >> a;
 cout << " Please Enter The value of b : ";
 int b;
 cin >> b;
-cout << " which Comparision do you want to perform with a b : ";
+cout << " which Comparision do you want to perform with a b \n (i.e < ,> ): ";
 char op;
 cin >> op;
 cout << "Hi, you choose that a"<< op << "b , So the result of this will be :";
