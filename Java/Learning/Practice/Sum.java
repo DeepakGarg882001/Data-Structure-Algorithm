@@ -1,4 +1,4 @@
-package Practice;
+package Java.Learning.Practice;
 import java.util.*;
 public class Sum {
     

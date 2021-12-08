@@ -1,4 +1,4 @@
-package Practice;
+package Java.Learning.Practice;
 import java.util.*;
 class Calculator{
     public static void main(String[] args){

@@ -1,1 +1,1 @@
-package Practice;
+package Java.Learning.Practice;
