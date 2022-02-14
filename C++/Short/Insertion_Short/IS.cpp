@@ -1,20 +1,22 @@
 #include<iostream>
 using namespace std;
 
-void shortArray(int Arr[],int size){
+void InsShortArray(int Arr[],int size){
     
-    int crrunt;
-    int j;
     for(int i=1;i<size;i++){
-       crrunt=Arr[i];
-       j=i-1;
-
-       while (j >= 0 && Arr[j] > crrunt)
-        {
-            Arr[j + 1] = Arr[j];
-            j = j - 1;
+        int current=Arr[i];
+        int j=i-1;
+        
+        while(j>=0){
+            if(Arr[j]>Arr[i]){
+                Arr[j+1]=Arr[j];
+            }else{
+                break;
+            }
+            j=j-1;  
         }
-        Arr[j + 1] = crrunt;
+        Arr[j+1]=current;
+
     }
 }
 
@@ -29,7 +31,7 @@ int main(){
         cin>>Arr[i];
     }  
 
-   shortArray(Arr,size);  
+   InsShortArray(Arr,size);  
 
    cout<<"The shorted Array is { ";
    for(int i=0;i<size;i++){
