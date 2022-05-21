@@ -1,0 +1,30 @@
+                                                     -------------- Let's Start ---------------
+
+
+ 
+ #Object Oriented Design 
+   
+   => Low Level Designing
+
+     
+
+     # what is OOP's ?
+        
+        it is a type of Programming(coding) Technique in which all the concepts revolves arround { Classes, Objects, 4 Pillers }.
+
+        4-Pillers: -> Inheritence
+                   -> Polymorphism
+                   -> Encapsulation
+                   -> Abstraction
+
+
+             #Class: it is a type of Design. i.e BluePrint , Templet
+                
+                     It have Two Properties: -> State
+                                             -> Behaviour 
+
+
+
+           #Object:      
+   
+     
