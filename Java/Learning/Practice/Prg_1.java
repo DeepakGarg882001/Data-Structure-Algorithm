@@ -7,3 +7,12 @@ public class Prg_1 {
         
     }
 }
+
+class Human{
+    int age ;
+    int weight;
+
+    void Sleep(){
+        
+    }
+}
