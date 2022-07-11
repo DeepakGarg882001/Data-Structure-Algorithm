@@ -4,18 +4,19 @@ using namespace std;
 void InsShortArray(int Arr[],int size){
     
     for(int i=1;i<size;i++){
-        int current=Arr[i];
+        // int current=Arr[i];
         int j=i-1;
         
         while(j>=0){
-            if(Arr[j]>Arr[i]){
-                Arr[j+1]=Arr[j];
+            if(Arr[j]>Arr[j+1]){
+                
+                swap(Arr[j],Arr[j+1]);
             }else{
                 break;
             }
             j=j-1;  
         }
-        Arr[j+1]=current;
+        // Arr[j+1]=current;
 
     }
 }

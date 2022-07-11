@@ -1,0 +1,221 @@
+
+
+
+Data Types :
+          
+          The data type of a value (or variable in some contexts) is an attribute that tells what kind of data that value can have.
+     
+    NOTE: size of each data type may vary on the type of Compiler to Compiler.
+
+      -> int : integer
+
+               eg. int num = 11928812347;             
+             
+               size: 4 Bytes => 32 bits
+ 
+-> short int : it is also an integer
+              
+               size : 2 Bytes => 16 bits
+
+ -> long int : it is also an integer
+
+               size : 8 Bytes => 64 bits
+
+     -> char : character
+                
+               eg. char Letter = 'G';
+
+               size: 1 Byte => 8 bits
+
+     -> bool : Bollean 
+
+               eg bool result = true;
+
+               size: 1 bit
+
+               because it only contain One Bit memory i.e Either it may be 0 or 1    
+
+               0 => False
+               1 => True
+
+     -> float : This is used to store Decimal/Fractional values.
+                this is not a integer.
+                It have numbers on both side of decimal
+
+                eg float Ans= 2339.341;
+
+                size: 4 Bytes => 32 bits
+
+    -> double : Double data type is used for storing double-precision floating-point/decimal values.
+                
+                eg. double result = 23449014994.045994045;
+                size : 8 Bytes => 64 bits
+
+
+
+
+
+
+ // ========= ========= ======== ========= ========= ========= ====== //
+
+
+
+  Q. In every data types we have a maximum and minimum limit like 2pow(x-1) -1. here x repersents the number of bits of that Data Type. But what is meanining of Subtraction 1 from 2pow(x-1). Why we are doing this and why only 1 we are subtracting.               
+
+  Ans. This story starts from the Types of Numbers. i.e we have two Types of numbers 
+         
+          -> Signed Numbers     : ( Positive , Negative )
+          -> UnSigned Numbers   : ( Positive )
+
+       Now all this depends upon the Compiler, that which type of Number type we are using.
+       we can choose only one Type for the whole compiler.
+       Either we can build a compiler on Signed Numbers or UnSigned Numbers. So that Compiler can not became confuse between these.
+
+
+       CASE 1 :   UnSigned Numbers
+
+          Here we can only use Positive Numbers. i.e only Positive numbers are converted into Binary Digits. 
+          Here all the bits are used to repersent that Number.
+
+          eg. we have 3 bits
+
+               Binary     Decimal
+                000          0
+                001          1
+                010          2
+                011          3
+                100          4
+                101          5
+                110          6
+                111          7
+
+           all the 3 bits are used to repersent a number.
+           
+            Maximum Value : 2pow(x)  - 1 
+            Minumun Value : 0
+               x repersents the Total number of bits.
+
+               eg. Total bits = 3
+                   i.e x=3
+
+                   Maximum Value : 2pow(3)   -1  => (2*2*2) - 1 => (8) -1 => 7 
+                   Minumun Value : 0
+
+
+
+
+        CASE 2 : Signed Numbers
+
+           Here we have Two types of Numbers i.e Positive or Negative.
+           So we have to follow some rules So that Compiler can easily find out that this Number is a Positive Number or Negative Number.
+
+           So, Here one bit is Reserved to repersent Positive or Negative.
+               0 : Positive
+               1 : Negative
+          
+          Here the left most bit is used to repersent Sign of Number.
+          and remaining bits are used to repersent the value of that number.
+
+          eg.  we have 3 bits
+               
+               Binary                                Decimal
+
+                000   =>   0  00    =>   +  00   =>    +0
+                001   =>   0  01    =>   +  01   =>    +1
+                010   =>   0  10    =>   +  10   =>    +2
+                011   =>   0  11    =>   +  11   =>    +3
+
+                100   =>   1  00    =>   -  00   =>    -4
+                101   =>   1  01    =>   -  01   =>    -3
+                110   =>   1  10    =>   -  10   =>    -2
+                111   =>   1  11    =>   -  11   =>    -1
+                  
+
+            Maximum Value : +2pow(x-1)  - 1 
+            Minumun Value : -2pow(x-1)   
+               x repersents the Total number of bits.
+
+               eg. Total bits = 3
+                   i.e x=3
+
+                   Maximum Value : +2pow( 3 -1 )   -1  =>   2pow(2)   -1 =>  (2*2) - 1 =>  (4) -1 => +3 
+                   Minumun Value : -2pow( 3 -1 )       =>  -2pow(2)      => -(2*2) + 1 => -(4)    => -4
+     
+      
+        Now to Convert any Negative number into Binary and Binary to Negative.
+        
+        Sol:  We can do the above Converstion into 2 Steps
+             
+              Step 0 : Ignore the Positive or Negative
+
+              Step 1 : take 1st Complement of the number.
+
+              Step 2 : take 2nd Complement of the Number.
+
+
+              How To find 1st Complement ?
+
+              Sol:  Just Reverse every bit value.
+
+                   eg. Number = -3
+
+                      Step 0 : Number = 3
+                        
+                        In Binary : 011 = 3
+                                  
+                      Step 1 : 1st Complement
+                        
+                          011 => 100
+                          just change the value of every bit
+                     
+
+              How To find 2nd Complement ?
+              Sol: Just add +1 into 1st Complement of above Number.
+                      
+                      Step 3 : 2nd Complement
+                         
+                           100
+                           + 1
+                           ----
+                           101
+
+                 Now we have to Check the first Left most bit To Identify the Sign of Number
+                    1 : Negative
+                    0 : Positive
+
+                 Now Check what was the Given number at Step 0.
+                     Number = 3
+                     Sign = Negative
+
+                     finally : 101 = -3
+
+
+        
+         === Now Convert a Negative Binary Number back to its Value ===
+           
+           Sol: Repeat The same Steps again
+
+               Given Bit : 101
+
+               Step 1 : 1st Complement
+                
+                => 101  => 010
+
+               Step 2 : 2nd Complement
+
+                =>  add +1
+
+                     010
+                     + 1
+                     ----
+                     011
+
+                 011 repersents 3
+
+                 Initialy it have Left Most Bit = 1 i.e this is Negative Number
+
+                 finally, 101 = -3     
+             
+
+          
+            
