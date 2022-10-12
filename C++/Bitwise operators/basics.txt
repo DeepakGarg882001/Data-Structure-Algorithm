@@ -1,0 +1,246 @@
+                =========   Bitwise Operator =========
+
+
+Simply we have 6 types of Operators:-
+ -> AND  : &
+ -> OR   : |
+ -> NOR  : ~
+ -> XOR  : ^
+ -> Left Shift  : <<
+ -> Right Shift : >>
+
+# All These Operators works at bit level not at the number level.
+  eg. 2 & 3 => Found?
+    
+    2 -> 000000010
+    3 -> 000000011
+
+    2&3 => 00000010
+           00000011
+          ---------
+           00000010
+          ---------
+
+
+## AND (&):
+-----------
+      => Truth Table
+         
+         | input | output |
+         |---+---+--------|
+         | x | y |    z   |
+         |---+---+--------|
+         | 0 | 0 |    0   |
+         | 0 | 1 |    0   |
+         | 1 | 0 |    0   |
+         | 1 | 1 |    1   |
+
+
+  eg:  int a = 5;
+       int b = 8;
+       int c = a&b ;
+
+  Ans: a = 0000000000000000000000000000101
+       b = 0000000000000000000000000001000
+       ------------------------------------
+       c = 0000000000000000000000000000000
+
+    => c = 0;
+ 
+
+## OR (|):
+-----------
+      => Truth Table
+         
+         | input | output |
+         |---+---+--------|
+         | x | y |    z   |
+         |---+---+--------|
+         | 0 | 0 |    0   |
+         | 0 | 1 |    1   |
+         | 1 | 0 |    1   |
+         | 1 | 1 |    1   |
+
+
+  eg:  int a = 5;
+       int b = 8;
+       int c = a|b ;
+
+  Ans: a = 0000000000000000000000000000101
+       b = 0000000000000000000000000001000
+       ------------------------------------
+       c = 0000000000000000000000000001101
+  
+    => c = 13;
+ 
+
+
+## NOR (~):
+-----------
+      => Truth Table
+         
+         | input | output |
+         |-------+--------|
+         |   x   |    z   |
+         |-------+--------|
+         |   0   |    1   |
+         |   1   |    0   |
+
+  eg:  int a = 5;
+       int c = ~a;
+
+  Ans: a = 0000000000000000000000000000101
+       ------------------------------------
+       c = 1111111111111111111111111111010
+         
+       Here 1st bit is 1 so this is a negative number.
+       Now find 2's Complement to get Number.
+
+       1's Complement: 000000000000000000000000000101
+       2's Complement:                             +1
+                      --------------------------------
+                       000000000000000000000000000110
+          
+
+    => c = -6;
+
+
+## XOR (^):
+-----------
+      => Truth Table
+         
+         | input | output |
+         |---+---+--------|
+         | x | y |    z   |
+         |---+---+--------|
+         | 0 | 0 |    0   |
+         | 0 | 1 |    1   |
+         | 1 | 0 |    1   |
+         | 1 | 1 |    0   |
+
+  eg:  int a = 5;
+       int b = 12;
+       int c = a^b ;
+
+  Ans: a = 0000000000000000000000000000101
+       b = 0000000000000000000000000001100
+       ------------------------------------
+       c = 0000000000000000000000000001001
+  
+    => c = 9;        
+
+
+
+
+## Left Shift (<<) :
+------------------
+      
+      This is used to shift the bit in left side,
+      eg. int a = 5;
+              a = 000000000000000000000000000101
+
+          int b = (a << 1);
+              b = 000000000000000000000000001010
+     
+     (a<<1) : Here `a` is the value of Number, and `1` is the numbers of bits which we have to shift.
+          
+          int c = (a<<4);
+              c = 000000000000000000000001010000
+
+
+
+
+## Right Shift (>>) :
+------------------
+      
+      This is used to shift the bit in right side,
+      eg. int a = 5;
+              a = 000000000000000000000000000101
+
+          int b = (a >> 1);
+              b = 000000000000000000000000000010
+     
+     (a>>1) : Here `a` is the value of Number, and `1` is the numbers of bits which we have to shift.
+          
+          int c = (a>>4);
+              c = 000000000000000000000000000000
+
+
+        
+#NOTE: When we are using LeftShift or RightShift then either we are Performing operation at Positive Number or Negative Number.
+  -> If the number is Positive, then padding will be by 0, i.e the default bit added at empty space will be Zero(0).
+  -> If the number is Negative, then padding will be Compiler Dependent, i.e the default bit added at empty space may be Zero(0) or One(1), all these depends upon Compiler to Compiler.
+
+
+
+=======================================================================================================
+                                        Pre/Post  Increment/Decrement
+                                        -----------------------------
+   for eg:
+       
+           INCREMENT             |          DECREMENT
+           ---------             |          ---------
+           int i=3;              |          int i=3;
+                                 |          
+           =>  i=i+1;            |          => i=i-1;
+               i=4;              |             i=2;
+                                 |        
+           =>  i=i+3;            |          => i=i-3;
+               i=6;              |             i=0;
+                                 |
+     Use This:                   |      Use This :        
+                                 |          
+          int i=3;               |           int i=3;
+           => i++;               |            => i--;  
+              i=4;               |               i=2;
+                                 |         
+          int i=3;               |           int i=3;
+          => i+=2;               |           => i-=3;
+              i=5;               |               i=0;
+                                 |           
+          int i=3;               |           int i=3;
+          => i+=1;               |           => i-=1;       
+              i=4;               |               i=2;
+                                 |
+          int i=3;               |           int i=3;
+           => ++i;               |            => --i;
+              i=4;               |               i=2;
+
+
+
+
+# Post Increment/Decrement :  eg:( i++ , i-- ) 
+      -> Post Increment/Decrement says that " after the execution of that word ,it will change the value of that variable", till then that variable will get its previous value.
+          eg:  int i=4;
+               int a= i;
+               int b=i++;
+               int c=i;
+
+            Sol: i=4;
+                 a=4;
+                 b=4;
+                 i=5;
+                 c=5;
+                
+        
+# Pre  Increment/Decrement :  eg:( ++i , --i ) 
+       -> Pre Increment/Decrement says that " Firstly change the value of that variable acc. to Increment/Decrement ",after than use that value.
+          eg:  int i=4;
+               int a= i;
+               int b=++i;
+               int c=i;
+
+            Sol: i=4;
+                 a=4;
+                 b=5;
+                 i=5;
+                 c=5;
+   
+
+
+       
+ 
+      
+
+     
+

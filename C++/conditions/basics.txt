@@ -1,0 +1,37 @@
+
+Q. Difference between variable and constant.
+Sol: A Data Type will be called as Variable when we allow to change its value further in future, i.e value  is Varying.
+     A Data Type will be called as Constant when we don't allow to change its value in future, i,e value is constant.
+
+
+
+ Q. Difference between break and continue ?
+ sol:  
+     Note: Generally we use `break` and `continue` keyword  inside any Loop. So basically these keywords affect the Looping condition and rules directly.
+
+     -> In other words if we are using `break` inside any loop then it will stop executing that loop after that keyword and pointer will start executing next line ,next after from where the whole entire loop is ending.
+
+
+      Break 
+      -> break is used , when a Any condition reach at desire Level , then stop that looping condition at that point and spike all the remaining code and condition below that break keyword.
+
+      -> break keyword points the pointer at the bottom of that Loop, i.e at the last of curly braces { }. 
+        eg. 
+             for(){                      
+                 if(1){}                 
+
+                 if(2){}
+
+                 if(3){ break;}
+
+                 if(4){}
+
+                 if(5){}
+             }    
+
+             so from above example, when the pointer will reach at if(3) then it will found a break condition and stop executing this loop and point to the last curly braces } 
+
+
+
+        continue:
+        -> continue also behave like break keyword i.e if we use this then all the remaining code in the loop will not execute , but have a major difference that continue keyword points the Pointer at the starting of loop. so that loop start from the Top to check the condition again and then execute the loop.     
