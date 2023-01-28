@@ -13,7 +13,7 @@ int main(){
   int i=2;
   while(i<=N){
     int c;
-    c=a+b;
+    c=a+b;    
     cout<< c<<" ";
     a=b;
     b=c;
