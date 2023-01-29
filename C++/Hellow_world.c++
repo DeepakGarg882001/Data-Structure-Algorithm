@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
 
-int main(){
+float main(){
     cout<< "Namastey Duniya"<<endl;
-    int a = 348913498;
-    cout<< a;
+    
+
 
 }
