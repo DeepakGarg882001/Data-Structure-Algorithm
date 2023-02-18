@@ -5,6 +5,12 @@
         "*.tcc": "cpp",
         "ostream": "cpp",
         "string_view": "cpp",
-        "system_error": "cpp"
+        "system_error": "cpp",
+        "random": "cpp",
+        "array": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp"
     }
 }
