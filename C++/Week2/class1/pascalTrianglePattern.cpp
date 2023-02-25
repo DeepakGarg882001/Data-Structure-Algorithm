@@ -26,7 +26,14 @@ int main()
     // cout << "Enter the Number of Columns : ";
     // cin >> col;
 
-    for (int rowNumber = 0; rowNumber < row-1; rowNumber++)
+    for (int rowNumber = 0; rowNumber < row; rowNumber++)
     {
+        int c= 1;
+        for(int col = 0;col<rowNumber+1;col++){
+            cout <<" "<<c<<" ";
+            c= c*(rowNumber-col)/(col+1);
+        }
+        cout<<endl;
+
     }
 }

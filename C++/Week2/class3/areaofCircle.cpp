@@ -3,20 +3,20 @@
 #include<iostream>
 using namespace std;
 
-int findArea(int r){
+float findArea(float r){
         
-        int area = 2*3.14*r;
+        int area = 3.14*r*r;
 
         return area;
 
 }
 
 int main(){
-    int r;
+    float r;
     cout <<"Enter the Value of Radius of Circle : ";
     cin>>r;
 
-   int area = findArea(r);
+   float area = findArea(r);
    cout <<"area of circle is : "<<area;
 
 }

@@ -1,0 +1,1 @@
+// Take input Upto N from user and print there Double of each Element of an Array.

@@ -28,13 +28,13 @@ int main(){
     //  cout << j<<endl;
     //  cout << c;
 
-//    int arr[8];
+   int arr[]={1,2,3,4,5,6,7,8};
 
 //    fill_n(arr,8,9);    
 
-//    for( int i=0;i<5;i++){
-//     cout << arr[i]<<"  ";
-//    }
+   for( int i=0;i<8;i++){
+    cout << arr[i]<<"  ";
+   }
 
 //    const int x =5;
     // x++;
