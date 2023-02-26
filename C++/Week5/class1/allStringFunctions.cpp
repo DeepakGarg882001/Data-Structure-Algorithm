@@ -1,0 +1,1 @@
+// use all string Functions which are in built
