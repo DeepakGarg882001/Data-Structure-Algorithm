@@ -1,0 +1,1 @@
+// write a Programm of Single-Level Inheritance

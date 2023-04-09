@@ -1,0 +1,1 @@
+// Write a Program of Diamond Problem and solve it

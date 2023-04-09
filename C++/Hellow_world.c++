@@ -1,12 +1,13 @@
 #include<iostream>
 // #include<cstring>
 #include <bits/stdc++.h>
+#include<vector>
 using namespace std;
 
 int main(){
     cout<< "Namastey Duniya"<<endl;
        
-       
+   vector<int> arr{1,1,1,1,3,3,3,3};
     
     // memset(arr, 0, 5);
 
@@ -29,7 +30,7 @@ int main(){
     //  cout << j<<endl;
     //  cout << c;
 
-   int arr[]={1,2,3,4,5,6,7,8};
+//    int arr[]={1,2,3,4,5,6,7,8};
 
 //    fill_n(arr,8,9);    
 
