@@ -30,41 +30,41 @@ class car{
       
       // for tyres
       int getTyres(){
-        return this.tyres;
+        return this->tyres;
       }
       
       void setTyres( int value ){
-        this.tyres = value;
+        this->tyres = value;
       }
 
 
       // for seats
       int getSeats(){
-        return this.seats;
+        return this->seats;
       }
 
       void setSeats( int num ){
-        this.seats = num;
+        this->seats = num;
       }
      
 
       // for name
       string getName(){
-        return this.name;
+        return this->name;
       }
       
       void setName( string name ){
-        this.name = name;
+        this->name = name;
       }
      
       
       // for categories
       string getCategories(){
-        return this.category;
+        return this->category;
       }
 
       void setCategory( string catagory){
-         this.category = catagory;
+         this->category = catagory;
       }
 };
 
