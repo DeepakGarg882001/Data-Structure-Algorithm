@@ -23,3 +23,166 @@
 
 // The number of nodes in the tree is in the range [0, 105].
 // -1000 <= Node.val <= 1000
+
+
+
+#include<iostream>
+#include<queue>
+using namespace std;
+
+// create a Node of tree
+class Node{
+
+    public:
+     
+     // store data
+     int data;
+     // store left child
+     Node* left;
+     // store right child
+     Node* right;
+
+
+     // data as parameter
+     Node( int data){
+         this->data = data;
+         this->left = NULL;
+         this->right = NULL;
+     }
+    
+};
+
+
+// building the tree
+Node* buildingTree( ){
+       
+       // take data 
+       int data;
+       cin >> data;
+
+
+       // check data
+       if(data == -1){
+        return NULL;
+       }
+
+       // create a New Node
+       Node* temp  = new Node(data);
+
+       // build left child
+       cout<<"Enter the value of Left child of Node "<<data<<" : ";
+       temp->left = buildingTree();
+
+       // build right child
+       cout<<"Enter the value of right child of Node "<<data<<" : ";
+       temp->right = buildingTree();
+      
+       return temp;
+}
+
+
+// printing
+void printLevelOrdered(Node* &root){
+     
+     // track level element in queue
+     queue<Node*> q;
+     if(root==NULL){
+        return ;
+     }
+     // insert intp q
+     q.push(root);
+     q.push(NULL);
+
+     while(q.empty()!=true){
+          
+          // step A : extract front element
+          Node* temp = q.front();
+
+          // step B : print data
+          if(temp!=NULL){
+            cout<< temp->data <<"  ";
+          }
+          else{
+            cout << endl;
+          }
+          
+          // step c: remove front element
+          q.pop();
+
+          // step D : insert its child
+          if(temp!=NULL){
+               
+               if(temp->left!= NULL){
+                q.push(temp->left);
+               }
+
+               if(temp->right!=NULL){
+                q.push(temp->right);
+               }
+
+          }
+          else{
+              if(q.empty()!=true){
+                q.push(NULL);
+              }
+          }
+
+     }
+
+
+}
+
+// finding min height of tree
+int findMinHeight(Node* &root){
+    
+    // base case
+    if(root==NULL){
+      return 0;
+    }
+
+    // processing
+
+         //step A : kya toh min Depth left mai hai
+         int leftCount = findMinHeight(root->left);
+
+         //step B : kya toh min Depth right mai Hai
+         int rightCount = findMinHeight(root->right);
+
+         // step C : store depth count
+         int count = 0;
+          
+         // step D: find MIN or MAX
+         if( leftCount!=0 && rightCount!=0 ){
+             // find min of these
+             count = min(leftCount, rightCount);
+         } 
+         else{
+             // find max of these
+             count = max(leftCount, rightCount);
+         }
+
+    // step E : include curr Node
+    return count +1 ;
+
+}
+
+
+int main(){
+      
+      cout<<"Enter the value of Root Node : ";
+
+      Node* root = buildingTree();
+
+      // print as Level Ordered Traversal
+      printLevelOrdered(root);
+      
+
+      // find min height
+      int minHeight = findMinHeight(root);
+
+      cout <<"Min Height is : "<<minHeight<<endl;
+
+      return 0;
+
+}
+

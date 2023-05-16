@@ -1,0 +1,1 @@
+// Find the minimum value in given Binary Search Tree
